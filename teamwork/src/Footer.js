@@ -5,7 +5,7 @@ export default class Footer extends Component {
         return (
             <footer className="pa4 pa5-l black-70 bt b--black-10">
                 <div className="mb4-l cf">
-                    <h1 className="fl w-100 pv0 f6 fw6 ttu tracked mb4">Studio</h1>
+
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
                         <h4 className="f5 f4-l fw6">SF</h4>
                         <span className="f7 f6-l db black-70">837 Larkin St.</span>
@@ -27,18 +27,18 @@ export default class Footer extends Component {
       </a>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
-                        <h4 className="f5 f4-l fw6">London</h4>
-                        <span className="f7 f6-l db black-70">11 Downey St.</span>
-                        <span className="f7 f6-l black-70">London, UK</span>
-                        <a href="tel:+5555555555" className="link dim f6 db fw6 pv3 black-70" title="Call the London office">+44 0 5555-5555</a>
+                        <h4 className="f5 f4-l fw6">Company</h4>
+                        <span className="f7 f6-l db black-70">Careers</span>
+                        <span className="f7 f6-l black-70">About Teamwork</span>
+                        <a href="tel:+5555555555" className="link dim f6 db fw6 pv3 black-70" title="Call the London office">Partners</a>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mb4 pl2 pl0-ns">
-                        <h4 className="f5 f4-l fw6">Tokyo</h4>
-                        <span className="f7 f6-l db black-70">1982 Flangan Rd.</span>
-                        <span className="f7 f6-l">Shinjuku, Tokyo</span>
-                        <a href="tel:+444444444444" className="f6 db dim fw6 pv3 link black-70" title="Call Tokyo Office">
-                            +99 5555-5555
-      </a>
+                        <h4 className="f5 f4-l fw6">Products</h4>
+                        <span className="f7 f6-l db black-70">Mobile App</span>
+                        <span className="f7 f6-l">Customized Solutions</span>
+                        <a href="tel:+2348066876531" className="f6 db dim fw6 pv3 link black-70" title="Call Tokyo Office">
+                            {'-2348066876531'}
+                        </a>
                     </article>
                 </div>
                 <section className="cf mb5">

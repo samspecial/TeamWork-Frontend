@@ -29,7 +29,7 @@ export class Provider extends Component {
             {
                 id: 1,
                 src: team,
-                title: "Split view on teamwork version 1",
+                title: "Split view on teamwork",
                 article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
                 btnText: "Try it now"
             }, {
@@ -42,13 +42,13 @@ export class Provider extends Component {
             {
                 id: 3,
                 src: communicate,
-                title: "Experience Unusual Bonding",
-                article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
+                title: "Commitment",
+                article: "Those who you play and relate with at work are your most valuable people, hence they deserve to be cherished",
                 btnText: "Stay plugged"
             }, {
                 id: 4,
                 src: network,
-                title: "Experience Unusual Bonding",
+                title: "Unrivalry experience",
                 article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
                 btnText: "Create now"
             }

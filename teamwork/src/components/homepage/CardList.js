@@ -14,7 +14,7 @@ export default class CardList extends Component {
                         <div className="cardlist"> {
                             cardData.map(card => (
                                 <Card class="card" key={card.id} src={card.src}
-                                    title={card.title} button={card.btnText} />
+                                    title={card.title} article={card.article} button={card.btnText} />
                             ))
                         }</div>
                     )
