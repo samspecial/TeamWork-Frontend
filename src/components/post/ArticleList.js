@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Consumer } from '../homepage/CardData'
 import SinglePost from './SinglePost'
-import { FaBeer } from 'react-icons/fa'
+
 export default class ArticleList extends Component {
     onDeletePost = (id, dispatch) => {
         fetch(`/${id}, method = 'DELETE'`).then(response => response.json()).then(data => { dispatch({ type: 'DELETE_ARTICLE', payload: id }) })
@@ -20,8 +20,6 @@ export default class ArticleList extends Component {
 
                             ))}
 
-                            <span><FaBeer
-                                onClick={this.onDeletePost} /></span>
                         </div>
                     )
                 }
