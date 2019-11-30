@@ -1,37 +1,78 @@
 import React, { Component } from 'react'
+import communicate from '../../img/communicate.png';
+import social from '../../img/social.png';
+import network from '../../img/network.png';
+import team from '../../img/team.png';
 
 const Context = React.createContext();
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'DELETE_ARTICLE':
+            return {
+                ...state,
+                articleData: state.articleData.filter(article => article.id !== action.payload)
+            };
+        case 'ADD_POST':
+            return {
+                ...state,
+                articleData: [action.payload, ...state.articleData]
+            }
+        default:
+            return state
+    }
+}
 export class Provider extends Component {
 
     state = {
         cardData: [
             {
                 id: 1,
-                src: "url.mp4",
-                title: "Experience Unusual Bonding",
+                src: team,
+                title: "Split view on teamwork version 1",
                 article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
                 btnText: "Try it now"
             }, {
                 id: 2,
-                src: "url.mp4",
+                src: social,
                 title: "Experience Unusual Bonding",
                 article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
                 btnText: "Learn more"
             },
             {
                 id: 3,
-                src: "url.mp4",
+                src: communicate,
                 title: "Experience Unusual Bonding",
                 article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
                 btnText: "Stay plugged"
             }, {
                 id: 4,
-                src: "url.mp4",
+                src: network,
                 title: "Experience Unusual Bonding",
                 article: "Those who you play and relate with at work are your most valuble people, hence they deserve to be cherished",
                 btnText: "Create now"
             }
-        ]
+        ],
+        articleData: [
+
+        ],
+        feed: [],
+        dispatch: action => this.setState(state => reducer(state, action))
+
+    }
+
+    componentDidMount() {
+        fetch("https://teamwork-a.herokuapp.com/api/v1/feed").then(response => response.json()).then(data => {
+            // this.setState({
+            //     title: data.title,
+            //     article: data.article,
+            //     url: data.url,
+            //     authorId: data.authorId,
+            //     id: data.id,
+            //     createdOn: data.createdOn
+            // })
+            console.log(data)
+        })
     }
     render() {
         return (

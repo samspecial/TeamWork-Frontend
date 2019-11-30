@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Consumer } from './CardData'
 import Card from './Card';
+import './Card.css';
 
 export default class CardList extends Component {
     render() {
@@ -10,9 +11,9 @@ export default class CardList extends Component {
                 {value => {
                     const { cardData } = value;
                     return (
-                        <div> {
+                        <div className="cardlist"> {
                             cardData.map(card => (
-                                <Card key={card.id} src={card.src}
+                                <Card class="card" key={card.id} src={card.src}
                                     title={card.title} button={card.btnText} />
                             ))
                         }</div>
