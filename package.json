@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "homepage": "http://samspecial.github.io",
   "private": true,
-  "engines": {
-    "npm": "6.13.2",
-    "node": "10.16.3"
-  },
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "react": "^16.12.0",
