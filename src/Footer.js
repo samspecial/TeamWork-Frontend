@@ -1,30 +1,31 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Footer extends Component {
     render() {
         return (
             <footer className="pa4 pa5-l black-70 bt b--black-10">
-                <div className="mb4-l cf">
+                <div className="mb4-l cf bg--green-20">
 
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
-                        <h4 className="f5 f4-l fw6">SF</h4>
-                        <span className="f7 f6-l db black-70">837 Larkin St.</span>
-                        <span className="f7 f6-l black-70">San Francisco, CA 94109 </span>
-                        <a className="f6 db fw6 pv3 black-70 link dim" title="Call SF" href="tel:+12075555555">
-                            +1 207-555-5555
-      </a>
+                        <h4 className="f5 f4-l fw6">Open Source</h4>
+                        <span className="f7 f6-l db black-70">Grow your skill</span>
+                        <span className="f7 f6-l black-70">Projects you can work on</span>
+                        <Link className="f6 db fw6 pv3 black-70 link dim" title="See this docs" to="https://google-drive.com">
+                            See this docs
+      </Link>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pl2 pl0-ns">
-                        <h4 className="f5 f4-l fw6">LA</h4>
+                        <h4 className="f5 f4-l fw6">API</h4>
                         <span className="f7 f6-l db black-70">
-                            1111 Manor Way
+                            Get work done with ease
       </span>
                         <span className="f7 f6-l di black-70">
-                            Los Angeles, CA 90048
+                            Contribute
       </span>
-                        <a href="tel:+13235555555" className="f6 db fw6 pv3 link dim black-70" title="Call the LA office.">
-                            +1 323-555-5555
-      </a>
+                        <Link to="https://samspecial.github.io/teamworkapp" className="f6 db fw6 pv3 link dim black-70" title="github">
+                            Github
+      </Link>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
                         <h4 className="f5 f4-l fw6">Company</h4>
@@ -37,7 +38,7 @@ export default class Footer extends Component {
                         <span className="f7 f6-l db black-70">Mobile App</span>
                         <span className="f7 f6-l">Customized Solutions</span>
                         <a href="tel:+2348066876531" className="f6 db dim fw6 pv3 link black-70" title="Call Tokyo Office">
-                            {'-2348066876531'}
+                            {'+2348066876531'}
                         </a>
                     </article>
                 </div>

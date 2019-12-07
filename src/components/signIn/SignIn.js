@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar'
-function validate(email, password) {
-    const errors = [];
-    if (email.length < 5) {
-        errors.push("Email should be at least 5 characters long");
-    }
-    if (email.split('').filter(x => x === "@").length !== 1) {
-        errors.push("Email should contain @");
-    }
-    if (email.indexOf(".") === -1) {
-        errors.push("Email should conatin at least one dot");
-    }
-    if (password.length < 6) {
-        errors.push("Password should be at least 6 characters long");
-    }
-    return errors;
+import '../signUp/SignUp.css'
+
+const emailRegex = RegExp(/\S+@\S+\.\S+/);
+const passwordRegex = RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/)
+
+const formValid = ({ formErrors, ...rest }) => {
+    let valid = true;
+    console.log(formErrors)
+    console.log(rest)
+    Object.values(formErrors).forEach(val => {
+        val.length > 0 && (valid = false)
+    })
+    Object.values(rest).forEach(val => {
+        val === "" && (valid = false)
+    })
+    return valid
 }
 export default class SignIn extends Component {
     constructor() {
@@ -22,49 +23,69 @@ export default class SignIn extends Component {
         this.state = {
             email: '',
             password: '',
-            errors: []
+            formErrors: {
+                email: "",
+                password: ""
+            }
         };
 
     }
     onChange = e => {
-        this.setState({ [e.target.name]: e.target.value })
+        e.preventDefault();
+
+        const { name, value } = e.target;
+        const { formErrors } = this.state;
+
+        switch (name) {
+            case 'email':
+                formErrors.email = emailRegex.test(value) ? '' : "Please enter a valid email address";
+                break;
+            case 'password':
+                formErrors.password = passwordRegex.test(value) ? "" : "contains uppercase, lowercase, alphanumeric, number and 8 characters";
+                break;
+            default:
+                break;
+        }
+        this.setState({ formErrors, [name]: value })
+        console.log(name, value)
     }
+
     onSubmit = e => {
         e.preventDefault();
-        const { email, password } = this.state;
-        const errors = validate(email, password);
-        if (errors.length > 0) {
-            this.setState({ errors });
-            return;
+        if (formValid(this.state)) {
+            alert(`Welcome back ${this.state.email}.
+            Kindly take your time to read up on what you have missed.`)
+        } else {
+            alert(`Ooops!!! Login credentials wrong.`)
         }
     }
     render() {
-        const { email, password, errors } = this.state;
+        const { email, password, formErrors } = this.state;
+
 
         return (
-            <div>
+            <React.Fragment>
                 <NavBar />
-                <div className="sign-in">
-                    <article className="br2 ba dark-gray b--black-20 dib mv4 w-100 w-50-m w-40-l mw6 center">
-                        <form onSubmit={this.onSubmit} className="measure" action="sign-in_submit" method="post" acceptCharset="utf-8">{errors.map(error => (<p key={error}>Error:{error}</p>))}
-                            <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
-                                <legend className="ph0 mh0 fw6 clip">Sign In</legend>
-                                <div className="mt3 db">
-                                    <label className="db fw4 lh-copy f6" htmlFor="email-address">Email</label>
-                                    <input className="pa2 input-reset ba bg-transparent w-100 measure" type="email"
-                                        name="email" id="email" placeholder="Email" value={email} onChange={this.onChange} />
-                                </div>
-                                <div className="mt3 db">
-                                    <label className="db fw4 lh-copy f6" htmlFor="password">password</label>
-                                    <input className="pa2 input-reset ba bg-transparent w-100 measure" type="text"
-                                        name="password" id="password" placeholder="password" value={password} onChange={this.onChange} />
-                                </div>
-                            </fieldset>
-                            <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign In" /></div>
-                        </form>
-                    </article>
-                </div>
-            </div>
+                <section className="sign-in">
+                    <form onSubmit={this.onSubmit} className="shadow-5" noValidate action="sign-in_submit" method="post" acceptCharset="utf-8">
+                        <h1>Sign In</h1>
+                        <div>
+                            <div className="tl">
+                                <label htmlFor="email-address">Email</label>
+                                <input className={formErrors.email.length > 0 ? "error" : null} type="email"
+                                    name="email" id="email" placeholder="Email" value={email} noValidate onChange={this.onChange} />{formErrors.email.length > 0 && (<small className="error-message">{formErrors.email}</small>)}
+                            </div>
+                            <div className="tl">
+                                <label htmlFor="password">password</label>
+                                <input className={formErrors.password.length > 0 ? "error" : null} type="text"
+                                    name="password" id="password" placeholder="password" value={password} noValidate onChange={this.onChange} />
+                                {formErrors.password.length > 0 && (<small className="error-message">{formErrors.password}</small>)}
+                            </div>
+                            <button className="btn" type="submit">Sign In</button>
+                        </div>
+                    </form>
+                </section>
+            </React.Fragment>
         )
     }
 }

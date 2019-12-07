@@ -9,6 +9,11 @@ font-size:24px !important;
    background:linear-gradient(to right, rgb(35, 34, 118),rgb(81, 80, 128),rgb(220, 167, 88),rgb(118, 68, 4));
 }
 
+.sign-in{
+    padding: 50px 20px;
+   background:linear-gradient(to right, rgb(92, 92, 158),rgb(3, 112, 101),teal);
+}
+
 h1{
     font-size:16px;
     font-weight:bold;

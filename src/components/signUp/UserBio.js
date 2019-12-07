@@ -13,8 +13,8 @@ export default class UserBio extends Component {
             <React.Fragment>
                 <NavBar />
                 <section className="sign-up">
-                    <form className="shadow-5 align" noValidate acceptCharset="utf-8">
-
+                    <form className="shadow-5 align" acceptCharset="utf-8">
+                        noValidate
                         <h1>Create User Account</h1>
                         <div>
                             <div className="tl"><label htmlFor="firstName">First Name</label>
