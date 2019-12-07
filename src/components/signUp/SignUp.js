@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import NavBar from '../NavBar';
 
-function validate(firstName, lastName, email, password, address, gender, jobRole, department) {
-    const errors = [];
-    if (firstName.length || lastName.length || address.length || gender.length || jobRole.length || department.length < 0) {
-        errors.push("Fields can not be empty");
-    }
-    if (email.length < 5) {
-        errors.push("Email should be at least 5 characters long");
-    }
-    if (email.split('').filter(x => x === "@").length !== 1) {
-        errors.push("Email should contain @");
-    }
-    if (email.indexOf(".") === -1) {
-        errors.push("Email should conatin at least one dot");
-    }
-    if (password.length < 6) {
-        errors.push("Password should be at least 6 characters long");
-    }
-    return errors;
+import UserBio from './UserBio';
+import UserDetails from './UserDetails';
+import JobDetails from './JobDetails';
+
+
+const emailRegex = RegExp(/\S+@\S+\.\S+/);
+const passwordRegex = RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/)
+
+const formValid = ({ formErrors, ...rest }) => {
+    let valid = true;
+
+    Object.values(formErrors).forEach(val => {
+        val.length > 0 && (valid = false)
+    })
+    Object.values(rest).forEach(val => {
+        val === "" && (valid = false)
+    })
+    return valid;
 }
 class SignUp extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
+            step: 1,
             firstName: "",
             lastName: "",
             email: "",
@@ -32,71 +32,126 @@ class SignUp extends Component {
             gender: "",
             jobRole: "",
             department: "",
-            errors: []
+            formErrors: {
+                firstName: "",
+                lastName: "",
+                email: "",
+                password: "",
+                address: "",
+                gender: "",
+                jobRole: "",
+                department: ""
+            }
         }
     }
     // componentDidMount(){
     //     fetch("https://teamwork-a.herokuapp.com/api/v1/auth/create-user")
     // }
-    onChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+    nextStep = () => {
+        const { step } = this.state;
+        this.setState({ step: step + 1 })
     }
 
-    onSubmit = e => {
-        e.preventDefault();
-        const { firstName, lastName, email, password, address, gender, jobRole, department } = this.state;
-        const errors = validate(firstName, lastName, email, password, address, gender, jobRole, department);
-        if (errors.length > 0) {
-            this.setState({ errors });
-            return;
+    prevStep = () => {
+        const { step } = this.state;
+        this.setState({ step: step - 1 })
+    }
+    onChange = (e) => {
+        e.preventDefault()
+        const { name, value } = e.target
+        const { formErrors } = this.state;
+        switch (name) {
+            case 'firstName':
+                formErrors.firstName = value.length < 3 ? "minimum 3 characters required" : "";
+                break;
+            case 'lastName':
+                formErrors.lastName = value.length < 3 ? "minimum 3 characters required" : "";
+                break;
+            case 'email':
+                formErrors.email = emailRegex.test(value) ? "" : "Invalid email address";
+                break;
+            case 'password':
+                formErrors.password = passwordRegex.test(value) ? "" : "contains uppercase, lowercase, alphanumeric, number and 8 characters";
+                break;
+            case 'address':
+                formErrors.address = value.length < 30 ? "minimum 30 characters required" : "";
+                break;
+            case 'gender':
+                formErrors.gender = value.length < 3 ? "minimum 3 characters required" : "";
+                break;
+            case 'jobRole':
+                formErrors.jobRole = value.length < 8 ? "minimum 8 characters required" : "";
+                break;
+            case 'department':
+                formErrors.department = value.length < 6 ? "minimum 6 characters required" : "";
+                break;
+            default:
+                break;
+        }
+
+
+        this.setState({
+            formErrors, [name]: value
+        })
+
+    }
+
+    onSubmitForm = () => {
+
+        if (formValid(this.state)) {
+            alert(`Successfully Created account as ${this.state.firstName} ${this.state.lastName}
+            Kindly check your email for further instructions`)
+            console.log(`Successfully Created account as ${this.state.firstName} ${this.state.lastName}
+            FIRST NAME: ${this.state.firstName}
+           LAST NAME: ${this.state.lastName}
+            EMAIL: ${this.state.email}
+            PASSWORD: ${this.state.password}
+            GENDER: ${this.state.gender}
+            ADDRESS: ${this.state.address}
+            JOBROLE: ${this.state.jobrole}
+            DEPARTMENT: ${this.state.department}`)
+        } else {
+            alert(`Ooops!!! Account creation failed, fields cannot be empty`)
         }
     }
 
     render() {
-        const { firstName, lastName, email, password, address, gender, jobRole, department, errors } = this.state
-        return (
-            <div>
-                <NavBar />
-                <article className="br3 ba b--black-10 pa4 mv4 w-100 w-50-m w-50-l mw6 center shadow-5">
-                    <form onSubmit={this.onSubmit} className="measure center" action="sign-up_submit" method="post" acceptCharset="utf-8">{errors.map(error => (<p key={error}>Error: {error}</p>))}
-                        <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="ph0 mh0 fw6 clip">Sign Up</legend>
+        const { formErrors, step } = this.state
+        const { firstName, lastName, email, password, gender, address, jobRole, department } = this.state;
+        const values = { firstName, lastName, email, password, gender, address, jobRole, department, formErrors }
+        switch (step) {
+            case 1:
+                return (
+                    <UserBio
+                        nextStep={this.nextStep}
+                        onChange={this.onChange}
+                        values={values}
+                    />
+                )
+            case 2:
+                return (
+                    <UserDetails
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
+                        onChange={this.onChange}
+                        values={values}
+                    />
+                )
+            case 3:
+                return (
+                    <JobDetails
+                        prevStep={this.prevStep}
+                        onClick={this.onSubmitForm}
+                        onChange={this.onChange}
+                        values={values}
+                    />
+                )
+
+            default:
+                break;
+        }
 
 
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100" type="text"
-                                name="firstName" id="firstName" placeholder="Firstname" value={firstName} onChange={this.onChange} />
-
-
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100" type="text"
-                                name="lastName" id="lastName" placeholder="Lastname" value={lastName} onChange={this.onChange} />
-
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100" type="email"
-                                name="email" id="email" placeholder="Email" value={email} onChange={this.onChange} />
-
-                            <input className="mt3 db pa2 input-reset ba bg-transparent hover-bg-gray w-100" type="password"
-                                name="password" id="password" placeholder="Password" value={password} onChange={this.onChange} />
-
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100 measure" type="text"
-                                name="gender" id="gender" placeholder="Gender" value={gender} onChange={this.onChange} />
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100 measure" type="text"
-                                name="address" id="address" placeholder="address" value={address} onChange={this.onChange} />
-
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100 measure" type="text"
-                                name="jobRole" id="jobRole" placeholder="Job Role" value={jobRole} onChange={this.onChange} />
-
-
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100 measure" type="text"
-                                name="department" id="department" placeholder="department" value={department} onChange={this.onChange} />
-
-                        </fieldset>
-                        <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign Up" /></div>
-                    </form>
-                </article>
-            </div>
-
-        )
     }
 }
 

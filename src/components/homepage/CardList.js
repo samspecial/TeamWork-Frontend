@@ -11,12 +11,13 @@ export default class CardList extends Component {
                 {value => {
                     const { cardData } = value;
                     return (
-                        <div className="cardlist"> {
-                            cardData.map(card => (
-                                <Card class="card" key={card.id} src={card.src}
-                                    title={card.title} article={card.article} button={card.btnText} />
-                            ))
-                        }</div>
+                        <div className="cardlist">
+                            {
+                                cardData.map(card => (
+                                    <Card class="card" key={card.id} src={card.src}
+                                        title={card.title} article={card.article} button={card.btnText} />
+                                ))
+                            }</div>
                     )
                 }}
             </Consumer>

@@ -1,10 +1,17 @@
 .card{
     width:320px;
-    height:500px;
-    padding:0 5px;
+    height:fit-content;
+    background-color:#fbfb;
     padding-bottom:30px;
     margin:40px 30px;
+   
     border-radius:10px;
+    transition: transform 500ms ease-out 200ms;
+}
+
+.card:hover{
+    transform: scale(1.03);
+    cursor: pointer;
 }
 
 .cardlist{
@@ -18,9 +25,12 @@ height:fit-content;
 margin:0 auto;
 } 
 
+
+
 .card-img{
-    width:100%;
+    width:fit-content;
     height: 60%;
+    border-radius:10px 10px 0 0;
 }
  @media only screen and (min-width: 480px) and (max-width:768px) {  
     .card{
