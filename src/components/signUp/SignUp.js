@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-
 import UserBio from './UserBio';
 import UserDetails from './UserDetails';
 import JobDetails from './JobDetails';
-
+import './SignUp.css'
 
 const emailRegex = RegExp(/\S+@\S+\.\S+/);
 const passwordRegex = RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/)

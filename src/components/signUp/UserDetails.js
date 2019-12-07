@@ -18,31 +18,31 @@ export default class UserDetails extends Component {
         return (
             <React.Fragment>
                 <NavBar />
-                <article className="br3 ba b--black-10 pa4 mv4 w-100 w-50-m w-50-l mw6 center shadow-5">
-                    <form className="measure center" noValidate acceptCharset="utf-8">
+                <section className="sign-up">
+                    <form className="shadow-5 align" noValidate acceptCharset="utf-8">
+                        <div>
+                            <h1>User Details</h1>
+                            <div className="tl"><label htmlFor="email">Email</label>
+                                <input className={formErrors.email.length > 0 ? "error" : null} type="email" noValidate
+                                    name="email" id="email" placeholder="Email" value={email} onChange={onChange} />
+                                {formErrors.email.length > 0 && (<small className="error-message">{formErrors.email}</small>)}
+                            </div>
+                            <div className="tl"><label htmlFor="password">Password</label>
+                                <input className={formErrors.password.length > 0 ? "error" : null} type="password" noValidate
+                                    name="password" id="password" placeholder="Password" value={password} onChange={onChange} />
+                                {formErrors.password.length > 0 && (<small className="error-message">{formErrors.password}</small>)}
+                            </div>
 
-                        <legend className="pv4 mv4 fw7">User Details</legend>
-                        <div className="tl"><label htmlFor="email">Email</label>
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100" type="email" noValidate
-                                name="email" id="email" placeholder="Email" value={email} onChange={onChange} />
-                            {formErrors.email.length > 0 && (<small className="errorMessage">{formErrors.email}</small>)}
+                            <div className="tl"><label htmlFor="address">Address</label>
+                                <input className={formErrors.address.length > 0 ? "error" : null} type="text" noValidate
+                                    name="address" id="address" placeholder="address" value={address} onChange={onChange} />
+                                {formErrors.address.length > 0 && (<small className="error-message">{formErrors.address}</small>)}
+                            </div>
+                            <button className="btn" onClick={this.back}>Back</button>
+                            <button className="btn" onClick={this.continue}>Continue</button>
                         </div>
-                        <div className="tl"><label htmlFor="password">Password</label>
-                            <input className="mt3 db pa2 input-reset ba bg-transparent hover-bg-transparent w-100" type="password" noValidate
-                                name="password" id="password" placeholder="Password" value={password} onChange={onChange} />
-                            {formErrors.password.length > 0 && (<small className="errorMessage">{formErrors.password}</small>)}
-                        </div>
-
-                        <div className="tl"><label htmlFor="address">Address</label>
-                            <input className="mt3 db pa2 input-reset ba bg-transparent w-100 measure" type="text" noValidate
-                                name="address" id="address" placeholder="address" value={address} onChange={onChange} />
-                            {formErrors.address.length > 0 && (<small className="errorMessage">{formErrors.address}</small>)}
-                        </div>
-                        <button className="" onClick={this.back}>Back</button>
-                        <button className="" onClick={this.continue}>Continue</button>
-
                     </form>
-                </article>
+                </section>
             </React.Fragment>
 
         )

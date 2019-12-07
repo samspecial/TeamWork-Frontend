@@ -15,7 +15,7 @@ import Homepage from './components/homepage/Homepage';
 function App() {
   return (
     <Provider>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Switch> <Route exact path="/" component={Homepage} />
             <Route exact path="/post" component={Article} />

@@ -16,7 +16,7 @@ const Header = () => {
                             <a className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/">How it Works</a>
                             <a className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/">Contact</a>
 
-                            <Link className="f6 fw4 hover-white no-underline white-70 dib ml2 pv2 ph3 ba grow" to="/signup">Sign Up</Link>
+                            <Link className="f6 fw4 hover-white no-underline white-70 dib ml2 pv2 ph3 ba grow" to="/signin">Sign In</Link>
                         </div>
                     </nav>
                     <div className="tc-l mt4 mt5-m mt6-l ph3">
