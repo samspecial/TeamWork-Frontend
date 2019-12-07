@@ -5,7 +5,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="pa4 pa5-l black-70 bt b--black-10">
-                <div className="mb4-l cf bg--green-20">
+                <div className="mb4-l cf">
 
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
                         <h4 className="f5 f4-l fw6">Open Source</h4>
