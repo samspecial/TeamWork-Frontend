@@ -1,7 +1,7 @@
 {
   "name": "teamwork",
   "version": "0.1.0",
-  "homepage": "http://samspecial.github.io/teamwork-frontend",
+  "homepage": "http://samspecial.github.io",
   "private": true,
   "engines": {
     "npm": "6.13.2",
@@ -25,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
   },
   "eslintConfig": {
     "extends": "react-app"
