@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import team from '../../img/team.png'
 import social from '../../img/social.png'
 import communicate from '../../img/communicate.png'
-import network from '../../img/teamwork.png'
+import network from '../../img/network.png'
 
 const Context = React.createContext();
 
