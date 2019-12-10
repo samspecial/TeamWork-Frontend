@@ -2,19 +2,25 @@
     background:#fff;
 }
 .post-head{
-    background:rgb(170, 115, 115);
+    background:rgb(206, 189, 189);
     padding: 30px 20px;
     display:grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: center;
     align-items: center;
     text-align: justify;
-    
-
 }
 
+h3{
+    
+    margin:20px auto;
+}
+
+p{
+
+}
 .bg{
-    background: linear-gradient(to top,coral,royalblue);
+    background: linear-gradient(to top,#F3B997,royalblue);
 }
 input[type="file"]{
     border:none;
@@ -27,6 +33,10 @@ input[type="file"]{
         
         grid-template-columns: repeat(2, 1fr)
     }
+    h3{
+        margin:20px 40px;
+    }
+    
 }
 
 @media only screen and (min-width: 769px) {
@@ -34,4 +44,9 @@ input[type="file"]{
         
         grid-template-columns: repeat(2, 1fr)
     }
+    h3{
+    
+        margin:20px 80px;
+    }
+    
 }
