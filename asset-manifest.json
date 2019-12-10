@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/teamworkapp/static/css/main.ef43afb2.chunk.css",
-    "main.js": "/teamworkapp/static/js/main.ec93b3e6.chunk.js",
-    "main.js.map": "/teamworkapp/static/js/main.ec93b3e6.chunk.js.map",
+    "main.css": "/teamworkapp/static/css/main.5c2c26ec.chunk.css",
+    "main.js": "/teamworkapp/static/js/main.267bac32.chunk.js",
+    "main.js.map": "/teamworkapp/static/js/main.267bac32.chunk.js.map",
     "runtime-main.js": "/teamworkapp/static/js/runtime-main.5c133ab5.js",
     "runtime-main.js.map": "/teamworkapp/static/js/runtime-main.5c133ab5.js.map",
     "static/css/2.299a5230.chunk.css": "/teamworkapp/static/css/2.299a5230.chunk.css",
-    "static/js/2.5a778bb4.chunk.js": "/teamworkapp/static/js/2.5a778bb4.chunk.js",
-    "static/js/2.5a778bb4.chunk.js.map": "/teamworkapp/static/js/2.5a778bb4.chunk.js.map",
+    "static/js/2.773eefff.chunk.js": "/teamworkapp/static/js/2.773eefff.chunk.js",
+    "static/js/2.773eefff.chunk.js.map": "/teamworkapp/static/js/2.773eefff.chunk.js.map",
     "index.html": "/teamworkapp/index.html",
-    "precache-manifest.e1d983f511cc917c89105004153c2dfa.js": "/teamworkapp/precache-manifest.e1d983f511cc917c89105004153c2dfa.js",
+    "precache-manifest.af8955fbfd3877b483c6fa1af4714a45.js": "/teamworkapp/precache-manifest.af8955fbfd3877b483c6fa1af4714a45.js",
     "service-worker.js": "/teamworkapp/service-worker.js",
     "static/css/2.299a5230.chunk.css.map": "/teamworkapp/static/css/2.299a5230.chunk.css.map",
-    "static/css/main.ef43afb2.chunk.css.map": "/teamworkapp/static/css/main.ef43afb2.chunk.css.map",
+    "static/css/main.5c2c26ec.chunk.css.map": "/teamworkapp/static/css/main.5c2c26ec.chunk.css.map",
     "static/media/App.css": "/teamworkapp/static/media/colabo.9315804b.png",
     "static/media/communicate.png": "/teamworkapp/static/media/communicate.018a2474.png",
+    "static/media/error.png": "/teamworkapp/static/media/error.35cfc5bf.png",
     "static/media/network.png": "/teamworkapp/static/media/network.9cd3b33b.png",
     "static/media/social.png": "/teamworkapp/static/media/social.2b630837.png",
     "static/media/team.png": "/teamworkapp/static/media/team.de0ecb86.png",
@@ -23,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.5c133ab5.js",
     "static/css/2.299a5230.chunk.css",
-    "static/js/2.5a778bb4.chunk.js",
-    "static/css/main.ef43afb2.chunk.css",
-    "static/js/main.ec93b3e6.chunk.js"
+    "static/js/2.773eefff.chunk.js",
+    "static/css/main.5c2c26ec.chunk.css",
+    "static/js/main.267bac32.chunk.js"
   ]
 }
