@@ -16,7 +16,7 @@ export default class ArticleList extends Component {
                         <div>
                             {articleData.map(post => (
                                 <SinglePost title={post.title} article={post.article} key={post.id}
-                                    url={post.url} id={post.authorId} created={post.createdOn} />
+                                    url={post.url} id={post.authorId} created={post.createdOn} image={post.image} />
 
                             ))}
 

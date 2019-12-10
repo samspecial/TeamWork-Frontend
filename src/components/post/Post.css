@@ -1,0 +1,37 @@
+.post-container{
+    background:#fff;
+}
+.post-head{
+    background:rgb(170, 115, 115);
+    padding: 30px 20px;
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    
+
+}
+
+.bg{
+    background: linear-gradient(to top,coral,royalblue);
+}
+input[type="file"]{
+    border:none;
+    background:transparent;
+    padding:10px 0;
+}
+
+@media only screen and (min-width: 480px) and (max-width:768px) {  
+    .post-head{
+        
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .post-head{
+        
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
