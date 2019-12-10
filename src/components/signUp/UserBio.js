@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../NavBar';
-
+import { Link } from 'react-router-dom'
 export default class UserBio extends Component {
     continue = e => {
         e.preventDefault();
@@ -14,7 +14,7 @@ export default class UserBio extends Component {
                 <NavBar />
                 <section className="sign-up">
                     <form className="shadow-5 align" acceptCharset="utf-8">
-                        noValidate
+
                         <h1>Create User Account</h1>
                         <div>
                             <div className="tl"><label htmlFor="firstName">First Name</label>
@@ -32,6 +32,7 @@ export default class UserBio extends Component {
                                     name="gender" id="gender" placeholder="Gender" value={gender} onChange={onChange} />
                                 {formErrors.gender.length > 0 && (<small className="error-message">{formErrors.gender}</small>)}
                             </div>
+                            <small className="tl db">Have an account, <Link className="link" to="/signin">Login</Link> here</small>
                             <button className="btn" onClick={this.continue}>Continue</button>
                         </div>
                     </form>

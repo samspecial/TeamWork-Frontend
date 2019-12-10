@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import communicate from '../../img/communicate.png';
-import social from '../../img/social.png';
-import network from '../../img/network.png';
-import team from '../../img/team.png';
+import team from '../../img/team.png'
+import social from '../../img/social.png'
+import communicate from '../../img/communicate.png'
+import network from '../../img/teamwork.png'
 
 const Context = React.createContext();
 
@@ -61,19 +61,19 @@ export class Provider extends Component {
 
     }
 
-    componentDidMount() {
-        fetch("https://teamwork-a.herokuapp.com/api/v1/feed").then(response => response.json()).then(data => {
-            // this.setState({
-            //     title: data.title,
-            //     article: data.article,
-            //     url: data.url,
-            //     authorId: data.authorId,
-            //     id: data.id,
-            //     createdOn: data.createdOn
-            // })
-            console.log(data)
-        })
-    }
+    // componentDidMount() {
+    //     fetch("https://teamwork-a.herokuapp.com/api/v1/feed").then(response => response.json()).then(data => {
+    //         // this.setState({
+    //         //     title: data.title,
+    //         //     article: data.article,
+    //         //     url: data.url,
+    //         //     authorId: data.authorId,
+    //         //     id: data.id,
+    //         //     createdOn: data.createdOn
+    //         // })
+    //         console.log(data)
+    //     })
+    // }
     render() {
         return (
             <Context.Provider value={this.state}>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import NavBar from './NavBar';
+import NavBarMain from './NavBarMain';
+import ArticleList from './post/ArticleList'
 export default class Feed extends Component {
     state = {
         title: '',
@@ -26,7 +27,7 @@ export default class Feed extends Component {
         // const { title, article, url, authorId, id, createdOn } = this.state
         return (
             <div className="">
-                <NavBar />
+                <NavBarMain />
                 {/* <div className="">
                     <h3>Title: {'title'}</h3>
                     <span><p>Created On: {'createdOn'} Author Id: {'authorId'}</p></span>
@@ -34,6 +35,7 @@ export default class Feed extends Component {
                     <p>Article: {'article'}</p>
                     <p>id: {'id'}</p>
                 </div> */}
+                <ArticleList />
             </div>
         )
     }

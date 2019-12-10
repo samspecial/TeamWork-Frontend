@@ -109,6 +109,7 @@ class SignUp extends Component {
             ADDRESS: ${this.state.address}
             JOBROLE: ${this.state.jobrole}
             DEPARTMENT: ${this.state.department}`)
+            this.props.history.push('/post')
         } else {
             alert(`Ooops!!! Account creation failed, fields cannot be empty`)
         }

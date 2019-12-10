@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar'
 import '../signUp/SignUp.css'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const emailRegex = RegExp(/\S+@\S+\.\S+/);
 const passwordRegex = RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/)
@@ -55,6 +56,7 @@ export default class SignIn extends Component {
         if (formValid(this.state)) {
             alert(`Welcome back ${this.state.email}.
             Kindly take your time to read up on what you have missed.`)
+            this.props.history.push('/post')
         } else {
             alert(`Ooops!!! Login credentials wrong.`)
         }
@@ -68,7 +70,7 @@ export default class SignIn extends Component {
                 <NavBar />
                 <section className="sign-in">
                     <form onSubmit={this.onSubmit} className="shadow-5" noValidate action="sign-in_submit" method="post" acceptCharset="utf-8">
-                        <h1>Sign In</h1>
+                        <h1>{'Welcome Back'}</h1>
                         <div>
                             <div className="tl">
                                 <label htmlFor="email-address">Email</label>
@@ -78,9 +80,10 @@ export default class SignIn extends Component {
                             <div className="tl">
                                 <label htmlFor="password">password</label>
                                 <input className={formErrors.password.length > 0 ? "error" : null} type="text"
-                                    name="password" id="password" placeholder="password" value={password} noValidate onChange={this.onChange} />
+                                    name="password" id="password" placeholder="Password" value={password} noValidate onChange={this.onChange} />
                                 {formErrors.password.length > 0 && (<small className="error-message">{formErrors.password}</small>)}
                             </div>
+                            <small className="db tl">Don't have an account. <Link className="link" to="/signup">Sign Up Now</Link></small><small className="db tl"><Link className="link" to='/password'>Forgot Password</Link></small>
                             <button className="btn" type="submit">Sign In</button>
                         </div>
                     </form>

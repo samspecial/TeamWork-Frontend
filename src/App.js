@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
-import ArticleList from './components/post/ArticleList';
-
+import NotFound from './components/NotFound'
 import Footer from './Footer';
 import SignUp from './components/signUp/SignUp';
 import SignIn from './components/signIn/SignIn';
-import Article from './components/post/Article';
+import Post from './components/post/Post';
 import { Provider } from './components/homepage/CardData';
 import Feed from './components/Feed';
 import 'tachyons';
@@ -18,14 +17,15 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Switch> <Route exact path="/" component={Homepage} />
-            <Route exact path="/post" component={Article} />
+            <Route exact path="/post" component={Post} />
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/Feed" component={Feed} />
+            <Route exact path="/feed" component={Feed} />
+            <Route component={NotFound} />
 
           </Switch>
           <Footer />
-          <ArticleList />
+
         </div>
       </BrowserRouter>
     </Provider>

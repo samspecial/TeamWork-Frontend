@@ -9,6 +9,10 @@ export default class SinglePost extends Component {
                 <h2>{title}</h2>
                 <p>{article}</p>
                 <span><p>{}{}</p></span>
+                <div>
+                    <textarea className=""></textarea>
+                    <button>{'Add'}</button>
+                </div>
             </div >
         )
     }
