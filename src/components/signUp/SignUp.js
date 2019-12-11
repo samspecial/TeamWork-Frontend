@@ -100,15 +100,6 @@ class SignUp extends Component {
         if (formValid(this.state)) {
             alert(`Successfully Created account as ${this.state.firstName} ${this.state.lastName}
             Kindly check your email for further instructions`)
-            console.log(`Successfully Created account as ${this.state.firstName} ${this.state.lastName}
-            FIRST NAME: ${this.state.firstName}
-           LAST NAME: ${this.state.lastName}
-            EMAIL: ${this.state.email}
-            PASSWORD: ${this.state.password}
-            GENDER: ${this.state.gender}
-            ADDRESS: ${this.state.address}
-            JOBROLE: ${this.state.jobrole}
-            DEPARTMENT: ${this.state.department}`)
             this.props.history.push('/post')
         } else {
             alert(`Ooops!!! Account creation failed, fields cannot be empty`)

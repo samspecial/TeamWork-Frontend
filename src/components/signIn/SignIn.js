@@ -53,17 +53,22 @@ export default class SignIn extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        if (formValid(this.state)) {
+        if (formValid(this.state) && this.canSubmit()) {
             alert(`Welcome back ${this.state.email}.
             Kindly take your time to read up on what you have missed.`)
             this.props.history.push('/post')
         } else {
-            alert(`Ooops!!! Login credentials wrong.`)
+            return
         }
+    }
+
+    canSubmit = () => {
+        const { email, password } = this.state;
+        return emailRegex.test(email) && passwordRegex.test(password)
     }
     render() {
         const { email, password, formErrors } = this.state;
-
+        const isEnabled = this.canSubmit();
 
         return (
             <React.Fragment>
@@ -83,8 +88,8 @@ export default class SignIn extends Component {
                                     name="password" id="password" placeholder="Password" value={password} noValidate onChange={this.onChange} />
                                 {formErrors.password.length > 0 && (<small className="error-message">{formErrors.password}</small>)}
                             </div>
-                            <small className="db tl">Don't have an account. <Link className="link" to="/signup">Sign Up Now</Link></small><small className="db tl"><Link className="link" to='/password'>Forgot Password</Link></small>
-                            <button className="btn" type="submit">Sign In</button>
+                            <small className="db tl">Don't have an account. <Link className="link" to="/signup">Sign Up</Link></small><small className="db tl"><Link className="link" to='/password'>Forgot Password</Link></small>
+                            <button className="btn" disabled={!isEnabled} type="submit">Sign In</button>
                         </div>
                     </form>
                 </section>

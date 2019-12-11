@@ -5,14 +5,23 @@ export default class JobDetails extends Component {
     onSubmitDetails = e => {
         e.preventDefault();
         this.props.onClick();
+        if (!this.canSubmitData()) {
+            return
+        }
     }
 
     back = e => {
         e.preventDefault();
         this.props.prevStep();
     }
+    canSubmitData = () => {
+        const { values: { jobRole, department } } = this.props;
+        return jobRole.length > 7 && department.length > 5;
+    }
     render() {
         const { values: { jobRole, department, formErrors }, onChange } = this.props;
+        const isEnabled = this.canSubmitData();
+
         return (
             <React.Fragment>
                 <NavBar />
@@ -31,7 +40,7 @@ export default class JobDetails extends Component {
                                 {formErrors.department.length > 0 && (<small className="error-message">{formErrors.department}</small>)}
                             </div>
                             <button className="btn" onClick={this.back}>Back</button>
-                            <button className="btn" type="submit">Submit</button>
+                            <button className="btn" disabled={!isEnabled} type="submit">Submit</button>
                         </div>
                     </form>
                 </section>

@@ -5,10 +5,17 @@ export default class UserBio extends Component {
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
+        if (!this.canContinue()) {
+            return
+        }
     }
-
+    canContinue = () => {
+        const { values: { firstName, lastName, gender } } = this.props;
+        return firstName.length > 2 && lastName.length > 2 && gender.length > 2;
+    }
     render() {
-        const { values: { firstName, lastName, gender, formErrors }, onChange } = this.props
+        const { values: { firstName, lastName, gender, formErrors }, onChange } = this.props;
+        const isEnabled = this.canContinue();
         return (
             <React.Fragment>
                 <NavBar />
@@ -33,7 +40,7 @@ export default class UserBio extends Component {
                                 {formErrors.gender.length > 0 && (<small className="error-message">{formErrors.gender}</small>)}
                             </div>
                             <small className="tl db">Have an account, <Link className="link" to="/signin">Login</Link> here</small>
-                            <button className="btn" onClick={this.continue}>Continue</button>
+                            <button className="btn" disabled={!isEnabled} onClick={this.continue}>Continue</button>
                         </div>
                     </form>
                 </section>

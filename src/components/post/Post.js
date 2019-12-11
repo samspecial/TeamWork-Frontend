@@ -16,6 +16,9 @@ export default class Post extends Component {
 
     onSubmit = (dispatch, e) => {
         e.preventDefault();
+        if (!this.canSubmitData()) {
+            return
+        }
         const { title, article, image } = this.state;
         const newArticle = {
             id: uuid(),
@@ -40,8 +43,14 @@ export default class Post extends Component {
         })
     }
 
+    canSubmitData = () => {
+        const { article, title } = this.state;
+        return article.length > 0 && title.length > 0
+    }
+
     render() {
-        const { title, article, image } = this.state;
+        const { article, title, image } = this.state;
+        const isEnabled = this.canSubmitData()
         return (
             <Consumer>
 
@@ -51,8 +60,8 @@ export default class Post extends Component {
                         <React.Fragment>
                             <NavBarMain />
                             <div className="post-container">
-                                <div className="post-head"><h3>{"Share thoughts and how you feels with your colleagues"}</h3>
-                                    <p>{"This is aim at increasing team bonding and relationship, feel free to interact and share knowledge. Areas you are expected to share knowledge are but not limited to the followings: History, Entrepreneurship, Fitness, Family, Faith, Relationship, Entertainment, Fashion, Politics, Technology"}</p>
+                                <div className="post-head"><h3 className="post">{"Share thoughts"}</h3>
+                                    <p className="paragraph">{"This is aimed at increasing team bonding and relationship, feel free to interact and share knowledge. Areas you are expected to share knowledge are but not limited to the followings: History, Entrepreneurship, Fitness, Family, Faith, Relationship, Entertainment, Fashion, Politics, Technology"}</p>
                                 </div>
                                 <section className="">
                                     <form onSubmit={this.onSubmit.bind(this, dispatch)} className="bg measure shadow-5" action="article-post" method="post" acceptCharset="utf-8" encType="multipart/form-data">
@@ -73,7 +82,7 @@ export default class Post extends Component {
                                                 <input type="file" id="image" name="image" aria-describedby="image-desc" className="pa2 input-reset" value={image} onChange={this.onPostChange} />
                                             </div>
                                         </div>
-                                        <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Publish" /></div>
+                                        <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" disabled={!isEnabled} type="submit" value="Publish" /></div>
                                     </form>
 
 
