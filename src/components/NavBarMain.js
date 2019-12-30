@@ -10,10 +10,8 @@ export default function NavBarMain() {
                 <img src={teamwork} className="dib w4" alt="Teamwork" />
             </Link>
             <div className="db dtc-l v-mid w-100 w-75-l tc tr-l">
-                <Link className="link dim dark-gray f6 f5-l dib mr3 mr4-l" to="/" title="Home">Home</Link>
+                <Link className="link dim dark-gray f6 f5-l dib mr3 mr4-l" to="/">Home</Link>
                 <Link className="link dim dark-gray f6 f5-l dib mr3 mr4-l" to="/feed" title="How it Works">Feed</Link>
-
-                <Link className="link dim dark-gray f6 f5-l dib" to="/post" title="Post">Post</Link>
             </div>
         </nav>
 

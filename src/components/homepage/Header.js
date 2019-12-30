@@ -13,8 +13,8 @@ const Header = () => {
                             </a>
                         </div>
                         <div className="dtc v-mid tr pa3">
-                            <a className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/">How it Works</a>
-                            <a className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/">Contact</a>
+                            <Link className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" to="/about">How it Works</Link>
+                            <Link className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" to="/contact">Contact</Link>
 
                             <Link className="f6 fw4 hover-white no-underline white-70 dib ml2 pv2 ph3 ba grow" to="/signin">Sign In</Link>
                         </div>

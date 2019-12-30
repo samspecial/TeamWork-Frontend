@@ -43,9 +43,7 @@ class SignUp extends Component {
             }
         }
     }
-    // componentDidMount(){
-    //     fetch("https://teamwork-a.herokuapp.com/api/v1/auth/create-user")
-    // }
+
     nextStep = () => {
         const { step } = this.state;
         this.setState({ step: step + 1 })
@@ -75,9 +73,6 @@ class SignUp extends Component {
             case 'address':
                 formErrors.address = value.length < 30 ? "minimum 30 characters required" : "";
                 break;
-            case 'gender':
-                formErrors.gender = value.length < 3 ? "minimum 3 characters required" : "";
-                break;
             case 'jobRole':
                 formErrors.jobRole = value.length < 8 ? "minimum 8 characters required" : "";
                 break;
@@ -92,15 +87,13 @@ class SignUp extends Component {
         this.setState({
             formErrors, [name]: value
         })
-
     }
 
     onSubmitForm = () => {
 
         if (formValid(this.state)) {
-            alert(`Successfully Created account as ${this.state.firstName} ${this.state.lastName}
-            Kindly check your email for further instructions`)
-            this.props.history.push('/post')
+            alert(`Successfully Created account as ${this.state.firstName} ${this.state.lastName}. Kindly check your email for further instructions`)
+            this.props.history.push('/feed')
         } else {
             alert(`Ooops!!! Account creation failed, fields cannot be empty`)
         }

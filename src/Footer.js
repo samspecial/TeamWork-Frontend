@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 export default class Footer extends Component {
     render() {
@@ -11,9 +10,9 @@ export default class Footer extends Component {
                         <h4 className="f5 f4-l fw6">Open Source</h4>
                         <span className="f7 f6-l db black-70">Grow your skill</span>
                         <span className="f7 f6-l black-70">Projects you can work on</span>
-                        <Link className="f6 db fw6 pv3 black-70 link dim" title="See this docs" to="https://google-drive.com">
+                        <a target="_blank" rel="noopener noreferrer" className="f6 db fw6 pv3 black-70 link dim" href="https://google-drive.com">
                             See this docs
-      </Link>
+      </a>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pl2 pl0-ns">
                         <h4 className="f5 f4-l fw6">API</h4>
@@ -23,21 +22,21 @@ export default class Footer extends Component {
                         <span className="f7 f6-l di black-70">
                             Contribute
       </span>
-                        <Link to="https://samspecial.github.io/teamworkapp" className="f6 db fw6 pv3 link dim black-70" title="github">
+                        <a target="_blank" rel="noopener noreferrer" href="https://samspecial.github.io/teamworkapp" className="f6 db fw6 pv3 link dim black-70">
                             Github
-      </Link>
+      </a>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
                         <h4 className="f5 f4-l fw6">Company</h4>
                         <span className="f7 f6-l db black-70">Careers</span>
                         <span className="f7 f6-l black-70">About Teamwork</span>
-                        <a href="tel:+5555555555" className="link dim f6 db fw6 pv3 black-70" title="Call the London office">Partners</a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org" className="link dim f6 db fw6 pv3 black-70">Partners</a>
                     </article>
                     <article className="fl w-50 dib-ns w-auto-ns mb4 pl2 pl0-ns">
                         <h4 className="f5 f4-l fw6">Products</h4>
                         <span className="f7 f6-l db black-70">Mobile App</span>
                         <span className="f7 f6-l">Customized Solutions</span>
-                        <a href="tel:+2348066876531" className="f6 db dim fw6 pv3 link black-70" title="Call Tokyo Office">
+                        <a href="tel:+2348066876531" className="f6 db dim fw6 pv3 link black-70">
                             {'+2348066876531'}
                         </a>
                     </article>
@@ -63,22 +62,20 @@ export default class Footer extends Component {
       </p>
                     </div>
                     <div className="db dtc-ns black-70 tc tr-ns v-mid">
-                        <a href="https://www.facebook.com/" className="link dim dib mr3 black-70" title="Impossible Labs on Facebook">
+                        <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/" className="link dim dib mr3 black-70">
                             <svg className="db w2 h2" data-icon="facebook" viewBox="0 0 32 32" fill="currentColor">
-                                <title >facebook icon</title>
-                                <path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"
+                                k                          <path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"
                                 ></path>
                             </svg>
                         </a>
-                        <a href="https://twitter.com/" className="link dim dib mr3 black-70">
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/" className="link dim dib mr3 black-70">
                             <svg className="db w2 h2" data-icon="twitter" viewBox="0 0 32 32"
                                 fill="currentColor" >
-                                <title >twitter icon</title>
                                 <path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"
                                 ></path>
                             </svg>
                         </a>
-                        <a href="https://medium.com/" className="link dim dib mr3 black-70" title="Impossible Labs on Medium">
+                        <a target="_blank" rel="noopener noreferrer" href="https://medium.com/" className="link dim dib mr3 black-70">
                             <svg className="db w2 h2" x="0px" y="0px" viewBox="0 0 290 248.6"
                                 fill="currentColor" >
                                 <g >
@@ -93,7 +90,7 @@ export default class Footer extends Component {
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/" className="link dim dib black-70">
+                        <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/company/" className="link dim dib black-70">
                             <svg className="db w2 h2" x="0px" y="0px" viewBox="0 0 48 48" >
                                 <linearGradient gradientUnits="userSpaceOnUse" x1="23.9995"
                                     y1="0" x2="23.9995" y2="48.0005" >
@@ -111,13 +108,13 @@ export default class Footer extends Component {
                             </svg>
                         </a>
                     </div>
-                </div>
+                </div >
                 <div className="db dn-ns">
                     <p className="f7 black-70 mt4 tc">
                         Copyright © TeamWork 2019
     </p>
                 </div>
-            </footer>
+            </footer >
 
         )
     }

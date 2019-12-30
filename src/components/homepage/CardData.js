@@ -17,7 +17,17 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 articleData: [action.payload, ...state.articleData]
-            }
+            };
+        case 'EDIT_ARTICLE':
+            return {
+                ...state,
+                articleData: state.articleData.map(article => article.id === action.payload.id ? (article = action.payload) : article)
+            };
+        case 'DELETE_COMMENT':
+            return {
+                ...state,
+                commentData: state.commentData.filter(article => article.id !== action.payload)
+            };
         default:
             return state
     }
@@ -56,24 +66,12 @@ export class Provider extends Component {
         articleData: [
 
         ],
+        commentData: [],
         feed: [],
         dispatch: action => this.setState(state => reducer(state, action))
 
     }
 
-    // componentDidMount() {
-    //     fetch("https://teamwork-a.herokuapp.com/api/v1/feed").then(response => response.json()).then(data => {
-    //         // this.setState({
-    //         //     title: data.title,
-    //         //     article: data.article,
-    //         //     url: data.url,
-    //         //     authorId: data.authorId,
-    //         //     id: data.id,
-    //         //     createdOn: data.createdOn
-    //         // })
-    //         console.log(data)
-    //     })
-    // }
     render() {
         return (
             <Context.Provider value={this.state}>

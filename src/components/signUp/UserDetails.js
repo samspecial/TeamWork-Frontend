@@ -20,7 +20,7 @@ export default class UserDetails extends Component {
 
     canContinue = () => {
         const { values: { email, password, address } } = this.props;
-        return emailRegex.test(email) && passwordRegex.test(password) && address.length < 30;
+        return emailRegex.test(email) && passwordRegex.test(password) && address.length > 30;
     }
     render() {
 

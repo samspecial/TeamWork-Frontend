@@ -13,7 +13,7 @@ export default function NavBar() {
                 <Link className="link dim dark-gray f6 f5-l dib mr3 mr4-l" to="/" title="Home">Home</Link>
                 <Link className="link dim dark-gray f6 f5-l dib mr3 mr4-l" to="/about" title="How it Works">How it Works</Link>
 
-                <Link className="link dim dark-gray f6 f5-l dib" to="/" title="Contact">Contact</Link>
+                <Link className="link dim dark-gray f6 f5-l dib" to="/contact" title="Contact">Contact</Link>
             </div>
         </nav>
 

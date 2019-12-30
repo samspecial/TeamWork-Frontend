@@ -35,9 +35,14 @@ export default class UserBio extends Component {
                             </div>
 
                             <div className="tl"><label htmlFor="gender">Gender</label>
-                                <input className={formErrors.gender.length > 0 ? "error" : null} type="text" noValidate
-                                    name="gender" id="gender" placeholder="Gender" value={gender} onChange={onChange} />
-                                {formErrors.gender.length > 0 && (<small className="error-message">{formErrors.gender}</small>)}
+                                <select type="text" noValidate
+                                    name="gender" value={gender} id="gender" onChange={onChange}>
+                                    <option value="">Choose Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+
+                                </select>
+
                             </div>
                             <small className="tl db">Have an account, <Link className="link" to="/signin">Login</Link> here</small>
                             <button className="btn" disabled={!isEnabled} onClick={this.continue}>Continue</button>

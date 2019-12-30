@@ -8,8 +8,6 @@ const passwordRegex = RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?
 
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
-    console.log(formErrors)
-    console.log(rest)
     Object.values(formErrors).forEach(val => {
         val.length > 0 && (valid = false)
     })
@@ -48,15 +46,14 @@ export default class SignIn extends Component {
                 break;
         }
         this.setState({ formErrors, [name]: value })
-        console.log(name, value)
+
     }
 
     onSubmit = e => {
         e.preventDefault();
         if (formValid(this.state) && this.canSubmit()) {
-            alert(`Welcome back ${this.state.email}.
-            Kindly take your time to read up on what you have missed.`)
-            this.props.history.push('/post')
+            alert(`Welcome back ${this.state.email}. Kindly take your time to read up on what you have missed.`)
+            this.props.history.push('/feed')
         } else {
             return
         }
@@ -83,7 +80,7 @@ export default class SignIn extends Component {
                                     name="email" id="email" placeholder="Email" value={email} noValidate onChange={this.onChange} />{formErrors.email.length > 0 && (<small className="error-message">{formErrors.email}</small>)}
                             </div>
                             <div className="tl">
-                                <label htmlFor="password">password</label>
+                                <label htmlFor="password">Password</label>
                                 <input className={formErrors.password.length > 0 ? "error" : null} type="text"
                                     name="password" id="password" placeholder="Password" value={password} noValidate onChange={this.onChange} />
                                 {formErrors.password.length > 0 && (<small className="error-message">{formErrors.password}</small>)}

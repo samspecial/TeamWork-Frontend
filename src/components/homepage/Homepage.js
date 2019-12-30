@@ -18,8 +18,10 @@ const particleDetails = {
 
 const Homepage = () => {
     return (
+        <>
+        <Particles className="particles" params={particleDetails} />
         <div className="w-100 bg-black-90">
-            <Particles className="particles" params={particleDetails} />
+
             <Header />
             <div className="container">
 
@@ -28,6 +30,7 @@ const Homepage = () => {
 
 
         </div>
+        </>
     )
 }
 
