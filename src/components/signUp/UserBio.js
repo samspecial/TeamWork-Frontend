@@ -20,7 +20,7 @@ export default class UserBio extends Component {
             <React.Fragment>
                 <NavBar />
                 <section className="sign-up">
-                    <form className="shadow-5 align" acceptCharset="utf-8">
+                    <form className={this.continue ? "continue shadow-5 align" : "shadow-5 align"} acceptCharset="utf-8">
 
                         <h1>Create User Account</h1>
                         <div>
@@ -37,7 +37,7 @@ export default class UserBio extends Component {
                             <div className="tl"><label htmlFor="gender">Gender</label>
                                 <select type="text" noValidate
                                     name="gender" value={gender} id="gender" onChange={onChange}>
-                                    <option value="">Choose Gender</option>
+                                    <option value="">Choose...</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
 

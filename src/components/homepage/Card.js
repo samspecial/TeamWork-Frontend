@@ -12,7 +12,7 @@ class Card extends Component {
                     <p className="f6 lh-copy measure mt2 mid-white">
                         {this.props.article}
                     </p>
-                    <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue" href="/">{this.props.button}</a>
+                    <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-blue" href="/about">{this.props.button}</a>
                 </div>
             </div>
         )

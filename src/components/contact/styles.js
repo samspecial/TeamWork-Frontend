@@ -61,7 +61,7 @@ flex-direction:column;
 
 .form-group{
     position: relative;
-    height:70px;
+    height:60px;
     margin-bottom:20px;
     width:100%;
     overflow:hidden;
@@ -105,6 +105,7 @@ label .content-name{
 position:absolute;
 left:0;
 bottom:3px;
+height:30px;
 
 }
 
