@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/teamworkapp/static/css/main.5de1d8ef.chunk.css",
-    "main.js": "/teamworkapp/static/js/main.df3afdda.chunk.js",
-    "main.js.map": "/teamworkapp/static/js/main.df3afdda.chunk.js.map",
+    "main.css": "/teamworkapp/static/css/main.71849059.chunk.css",
+    "main.js": "/teamworkapp/static/js/main.52b75bac.chunk.js",
+    "main.js.map": "/teamworkapp/static/js/main.52b75bac.chunk.js.map",
     "runtime-main.js": "/teamworkapp/static/js/runtime-main.5c133ab5.js",
     "runtime-main.js.map": "/teamworkapp/static/js/runtime-main.5c133ab5.js.map",
     "static/css/2.299a5230.chunk.css": "/teamworkapp/static/css/2.299a5230.chunk.css",
     "static/js/2.1e97545c.chunk.js": "/teamworkapp/static/js/2.1e97545c.chunk.js",
     "static/js/2.1e97545c.chunk.js.map": "/teamworkapp/static/js/2.1e97545c.chunk.js.map",
     "index.html": "/teamworkapp/index.html",
-    "precache-manifest.b5535e3f6fe6b2ca746e6c60d86f7c94.js": "/teamworkapp/precache-manifest.b5535e3f6fe6b2ca746e6c60d86f7c94.js",
+    "precache-manifest.06a15b66dd5990e1175197ef72959482.js": "/teamworkapp/precache-manifest.06a15b66dd5990e1175197ef72959482.js",
     "service-worker.js": "/teamworkapp/service-worker.js",
     "static/css/2.299a5230.chunk.css.map": "/teamworkapp/static/css/2.299a5230.chunk.css.map",
-    "static/css/main.5de1d8ef.chunk.css.map": "/teamworkapp/static/css/main.5de1d8ef.chunk.css.map",
+    "static/css/main.71849059.chunk.css.map": "/teamworkapp/static/css/main.71849059.chunk.css.map",
     "static/media/App.css": "/teamworkapp/static/media/colabo.9315804b.png",
     "static/media/communicate.png": "/teamworkapp/static/media/communicate.018a2474.png",
     "static/media/error.png": "/teamworkapp/static/media/error.35cfc5bf.png",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.5c133ab5.js",
     "static/css/2.299a5230.chunk.css",
     "static/js/2.1e97545c.chunk.js",
-    "static/css/main.5de1d8ef.chunk.css",
-    "static/js/main.df3afdda.chunk.js"
+    "static/css/main.71849059.chunk.css",
+    "static/js/main.52b75bac.chunk.js"
   ]
 }
