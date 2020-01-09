@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Consumer } from '../homepage/CardData';
+import { connect } from 'react-redux';
 import uuid from 'uuid'
 import './Post.css'
 
