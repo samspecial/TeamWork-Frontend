@@ -14,6 +14,12 @@ export default class EditPost extends Component {
         }
     }
 
+    componentDidMount() {
+        let data = this.context.articleData;
+        console.log(data);
+    }
+
+
     onSubmit = (dispatch, e) => {
         e.preventDefault();
         if (!this.canSubmitData()) {
@@ -49,13 +55,13 @@ export default class EditPost extends Component {
 
     render() {
         const { article, title, image } = this.state;
-        console.log(this.props)
+
         const isEnabled = this.canSubmitData()
         return (
             <Consumer>
                 {value => {
                     const { dispatch } = value;
-                    console.log(dispatch)
+
                     return (
                         <section className="">
                             <form onSubmit={this.onSubmit.bind(this, dispatch)} className="bg measure shadow-5" action="article-post" method="post" acceptCharset="utf-8" encType="multipart/form-data">

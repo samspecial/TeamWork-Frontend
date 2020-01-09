@@ -42,7 +42,7 @@ export default class SinglePost extends Component {
     }
     render() {
         const { title, article, id } = this.props;
-        console.log(this.props);
+
         const shortened = this.shortenArticle(article);
         return (
             <Consumer>
