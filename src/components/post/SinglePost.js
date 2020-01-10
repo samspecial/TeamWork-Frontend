@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deletePost } from '../../actions/postAction';
+import { Section, Article } from './styles';
 
-import Comment from './Comment';
+// import Comment from './Comment';
 
 import { FaPencilAlt, FaTimes } from 'react-icons/fa';
 
@@ -48,14 +49,14 @@ class SinglePost extends Component {
         const shortened = this.shortenArticle(article);
         return (
             <React.Fragment>
-                <section>
-                    <article>
+                <Section>
+                    <Article>
                         <h2>{title}</h2>
                         <p>{article.length > 100 ? shortened : article}</p>
                         <span><FaTimes onClick={this.onDeleteClick.bind(this, id)} /><Link to={`/feed/edit/${id}`}> <FaPencilAlt /></Link></span>
-                    </article>
-                    <Comment />
-                </section>
+                    </Article>
+                    {/* <Comment /> */}
+                </Section>
 
             </React.Fragment>
         )

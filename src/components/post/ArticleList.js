@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPost } from '../../actions/postAction';
-
+import { Div } from './styles';
 import PropTypes from 'prop-types';
 
 import SinglePost from './SinglePost';
@@ -19,14 +19,14 @@ class ArticleList extends Component {
         const { postValue } = this.props;
         return (
 
-            <div>
+            <Div>
                 {postValue.map(post => (
                     <SinglePost title={post.title} article={post.article} key={post.id}
                         id={post.id} />
 
                 ))}
-                <p>{"The irony of life is that when we get pushed to the wall, the long awaited solution will show up."}</p>
-            </div>
+
+            </Div>
 
         )
     }
