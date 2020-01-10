@@ -12,8 +12,8 @@ export default class Comment extends Component {
 
     changeComment = (e) => {
 
-        const { value, comment } = e.target;
-        this.setState({ [comment]: value })
+        const { value, name } = e.target;
+        this.setState({ [name]: value })
 
     }
     render() {
