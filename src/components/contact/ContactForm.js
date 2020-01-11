@@ -28,7 +28,8 @@ export default class ContactForm extends Component {
         this.setState({
             firstName: "",
             lastName: "",
-            email: ""
+            email: "",
+            message: ""
         })
     }
     render() {

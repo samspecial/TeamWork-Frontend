@@ -32,6 +32,8 @@ textarea{
     color:rgb(5, 5, 5);
     border:1px solid rgb(19, 19, 19);
     border-radius:5px;
+    overflow: auto;
+    resize: none;
 }
 
 input:focus{

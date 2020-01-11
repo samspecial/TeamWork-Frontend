@@ -69,7 +69,9 @@ class Post extends Component {
                         </div>
                         <div className="tl">
                             <label className="db mv2 fw4 lh-copy f6" htmlFor="article">Article</label>
-                            <textarea id="comment" name="article" aria-describedby="comment-desc" className="pa2 input-reset ba bg-transparent w-100 measure"
+                            <textarea id="comment" name="article" aria-describedby="comment-desc"
+                                rows="4"
+                                className="pa2 input-reset ba bg-transparent w-100 measure"
                                 placeholder="Publish your article" value={article} onChange={this.onPostChange}></textarea>
                         </div>
                         <div className="tl">

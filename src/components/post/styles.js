@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Section = styled.section`
 width:90%;
 height:220px;
-// display:flex;
-// flex-wrap: wrap;
-// justify: flex-start;
-// align-items:center;
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+align-items:flex-start;
 background-color:white;
 border: 1px solid black;
 border-radius: 8px;
@@ -19,7 +19,7 @@ margin: 10px auto;
 `
 
 export const Article = styled.article`
-padding:20px;
+padding:10px 20px;
 
 width:100%;
 
@@ -51,9 +51,9 @@ width: 100%;
 height:fit-content;
 display:flex;
 flex-wrap: wrap;
-justify: flex-start;
-align-items:center;
-background-color:red;
+justify-content: flex-start;
+align-items:space-around;
+background-color: #3a5382;
 
 
 `

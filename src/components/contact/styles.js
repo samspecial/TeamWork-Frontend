@@ -124,6 +124,7 @@ textarea{
     border-radius:0;
     border:1px solid #3a5382;
     resize:none;
+    color: #3a5382;
 }
 textarea:focus{
 border:2px solid hsl(22, 88%, 58%)
