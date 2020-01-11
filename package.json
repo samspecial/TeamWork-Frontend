@@ -1,7 +1,7 @@
 {
   "name": "teamwork",
   "version": "0.1.0",
-  "homepage": "http://samspecial.github.io/teamworkapp",
+  "homepage": "https://samspecial.github.io/teamworkapp",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.1",
