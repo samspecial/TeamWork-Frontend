@@ -11,7 +11,7 @@ export default class ContactForm extends Component {
     }
     formChange = (e) => {
         e.preventDefault()
-        // const [name] = this.state;
+        
         const { value, name } = e.target
         this.setState({ [name]: value })
     }
