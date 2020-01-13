@@ -18,7 +18,7 @@ import Contact from './components/contact/Contact';
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename='/'>
         <div className="App">
           <Switch> <Route exact path="/" component={Homepage} />
             <Route exact path="/signin" component={SignIn} />

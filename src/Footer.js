@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer className="pa4 pa5-l black-70 bt b--black-10">
-                <div className="mb4-l cf">
+                <div className="mb4-l tc">
 
                     <article className="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
                         <h4 className="f5 f4-l fw6">Open Source</h4>
@@ -51,8 +51,8 @@ export default class Footer extends Component {
                         <p className="f4 fw6 mb2 f6 mt0">
                             Sign up for our newsletter.
       </p>
-                        <input placeholder="Email Address" className="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph4 border-box" />
-                        <input type="submit" className="input-reset w-100 w-auto-ns bg-black-80 white f5 pv2 pv3-ns ph4 ba b--black-80 bg-hover-mid-gray" />
+                        <input placeholder="Email Address" className="" />
+                        <input type="submit" className="" />
                     </div>
                 </section>
                 <div className="dt dt--fixed w-100" >
