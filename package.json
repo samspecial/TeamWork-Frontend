@@ -1,7 +1,10 @@
 {
   "name": "teamwork",
   "version": "0.1.0",
-  "homepage": "https://samspecial.github.io/teamworkapp",
+  "engines": {
+    "npm": "6.13.6",
+    "node": "10.16.3"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.1",
@@ -21,9 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
     "tachyons": "^4.10.0"
   }
 }

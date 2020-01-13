@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import 'tachyons';
@@ -18,7 +18,7 @@ import Contact from './components/contact/Contact';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Switch> <Route exact path="/" component={Homepage} />
             <Route exact path="/signin" component={SignIn} />
@@ -32,7 +32,7 @@ function App() {
           <Footer />
 
         </div>
-      </Router>
+      </BrowserRouter>
     </Provider>
   );
 }
