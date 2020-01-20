@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar'
 import '../signUp/SignUp.css'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 
 const emailRegex = RegExp(/\S+@\S+\.\S+/);
 const passwordRegex = RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/)
